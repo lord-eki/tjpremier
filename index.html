@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Expo Registration</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #fdfcfb, #f3efe6);
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 420px;
+            color: #333;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 90px;
+            margin-bottom: 10px;
+        }
+
+        .logo h2 {
+            font-weight: 600;
+            color: #222;
+        }
+
+        .logo p {
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* Info Notice */
+        .info-note {
+            background: #f9f6ed;
+            border-left: 4px solid #c8a951;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 12.5px;
+            color: #555;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+            margin-top: 15px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 14px;
+            border: 1px solid #e0e0e0;
+            background: #fafafa;
+            transition: 0.3s;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+            padding-right: 40px;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #c8a951;
+            background: #fff;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(to right, #c8a951, #e5c97a);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .success {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: green;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media(max-width: 500px) {
+            .container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+
+        /* Spinner */
+        .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Confetti */
+        .confetti-piece {
+            position: fixed;
+            width: 8px;
+            height: 12px;
+            top: 0;
+            opacity: 0.9;
+            z-index: 9999;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="logo">
+            <img src="https://www.tjpremierevents.com/images/demo-spa-salon-logo-white.png" alt="Logo">
+            <h2>TJ Premier Events</h2>
+            <p>Trade Expo 2026 Registration</p>
+        </div>
+
+        <!-- Marketing Info Notice -->
+        <div class="info-note">
+            By submitting this form, you consent to your information being used for 
+            marketing, promotional communication, and event updates related to Trade Expo 2026. 
+            Your data will be handled confidentially and will not be shared with unauthorized third parties.
+        </div>
+
+        <form id="expoForm">
+            <input name="name" placeholder="Full Name" required>
+            <input name="phone" placeholder="Phone Number" required>
+            <input name="email" type="email" placeholder="Email Address" required>
+
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <input name="residence" placeholder="Area of Residence (City / Town)" required>
+
+            <select name="interest" required>
+                <option value="">Area of Interest</option>
+                <option>Banking & Loans</option>
+                <option>Investment & Insurance</option>
+                <option>Vehicles & Car Financing</option>
+                <option>Solar & Energy Solutions</option>
+                <option>Real Estate & Property</option>
+                <option>Education & Career Development</option>
+                <option>Business & SME support</option>
+                <option>Technology Solutions</option>
+                <option>Agriculture Solutions</option>
+            </select>
+
+            <button type="submit" id="submitBtn">
+                Register Now
+                <span class="spinner" id="spinner"></span>
+            </button>
+        </form>
+
+        <div class="success" id="response"></div>
+
+    </div>
+
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbzy2unj-tcIT467kzt8nHVq3e2rCbTUV3qwsvn-D5AXzThIBubyR6er6V0OLLOO-7bxDg/exec";
+        const form = document.getElementById("expoForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const spinner = document.getElementById("spinner");
+        const responseText = document.getElementById("response");
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+
+            spinner.style.display = "inline-block";
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = "0.7";
+
+            const formData = new FormData(form);
+            const data = {};
+
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            fetch(scriptURL, {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(response => {
+                    spinner.style.display = "none";
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = "1";
+
+                    responseText.innerText = "Thank you for your registration!";
+                    responseText.style.color = "green";
+
+                    launchConfetti();
+                    form.reset();
+                })
+                .catch(error => {
+                    spinner.style.display = "none";
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = "1";
+
+                    responseText.innerText = "Something went wrong.";
+                    responseText.style.color = "red";
+                });
+        });
+
+        function launchConfetti() {
+            const colors = ["#c8a951", "#e5c97a", "#f3efe6", "#ffffff", "#d4af37"];
+
+            for (let i = 0; i < 80; i++) {
+                const confetti = document.createElement("div");
+                confetti.classList.add("confetti-piece");
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.transform = "rotate(" + Math.random() * 360 + "deg)";
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+        }
+    </script>
+
+</body>
+</html>
