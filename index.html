@@ -56,18 +56,47 @@
             color: #777;
         }
 
-        /* Info Notice */
-        .info-note {
-            background: #f9f6ed;
-            border-left: 4px solid #c8a951;
-            padding: 12px;
-            margin-bottom: 20px;
-            font-size: 12.5px;
-            color: #555;
-            border-radius: 8px;
-            line-height: 1.5;
+        /* Wrapper */
+        .title-wrapper {
+            position: relative;
+            display: inline-block;
         }
 
+        /* Circular badge */
+        .free-badge {
+            position: absolute;
+            top: -25px;
+            right: -35px;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #e5c97a, #c8a951);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.2;
+            padding: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transform: rotate(-15deg);
+            border: 3px dashed rgba(255, 255, 255, 0.6);
+            animation: pop 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes pop {
+            from {
+                transform: rotate(-15deg) scale(1);
+            }
+
+            to {
+                transform: rotate(-15deg) scale(1.05);
+            }
+        }
+
+        /* Inputs */
         input,
         select {
             width: 100%;
@@ -140,6 +169,14 @@
                 margin: 20px;
                 padding: 30px 20px;
             }
+
+            .free-badge {
+                width: 70px;
+                height: 70px;
+                font-size: 9px;
+                right: -20px;
+                top: -20px;
+            }
         }
 
         /* Spinner */
@@ -185,11 +222,17 @@
     <div class="container">
 
         <div class="logo">
-            <img src="https://www.tjpremierevents.com/images/demo-spa-salon-logo-white.png" alt="Logo">
-            <h2>TJ Premier Events</h2>
-            <p>Nakuru Trade  and  Tourism Expo 28th - 30th May 2026</p>
-        </div>
+            <div class="title-wrapper">
+                <img src="https://www.tjpremierevents.com/images/demo-spa-salon-logo-white.png" alt="Logo">
+                <h2>TJ Premier Events</h2>
 
+                <div class="free-badge">
+                    FREE<br>ENTRY
+                </div>
+            </div>
+
+            <p>Nakuru Trade and Tourism Expo 28th - 30th May 2026</p>
+        </div>
 
         <form id="expoForm">
             <input name="name" placeholder="Full Name" required>
